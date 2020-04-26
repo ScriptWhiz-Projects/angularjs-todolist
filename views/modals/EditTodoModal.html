@@ -1,0 +1,25 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #F9FAFC">
+                <button type="button" class="close" ng-click="$hide()">&times;</button>
+                <h4 class="modal-title">Edit ToDo</h4>
+            </div>
+
+            <div class="inset">
+                <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="control-label">ToDo name:</label>
+                      <input type="text" ng-model="currentToDo.name" class="form-control" id="recipient-name">
+                    </div>
+                  </form>
+            </div>
+
+            <div class="modal-footer" style="background-color: #F9FAFC">
+                <button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+                <button type="button" class="btn btn-success" ng-click="editToDo();$hide()" ng-disabled="message.Message.length < 1">Save</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<section class="register-bg">
+    <div>
+        <form class="register-panel" ng-submit="$event.preventDefault()">
+            <h1>Register</h1>
+            <input type="text" ng-model="user.username" name="username"  placeholder="Name" />
+            <input type="text" ng-model="user.surname" name="surname"  placeholder="Surname" />
+            <input type="email" ng-model="user.email" name="email" placeholder="Email" />
+            <input type="password" ng-model="user.password" name="password" placeholder="Password" />
+            <button ng-click="backClicked()" class="btn btn-default" type="submit"> Login <span class="glyphicon glyphicon-arrow-left"></span></button>
+            <button ng-click="handleRegister()"  style="background: #2ecc71" class="btn btn-success">Register</button>
+        </form>
+    </div>
+</section>
