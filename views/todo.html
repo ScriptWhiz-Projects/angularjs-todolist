@@ -1,26 +1,32 @@
-<div class="inset">
-    <div class="input-group">
-        <input type="text" ng-model="todoName"  class="form-control" aria-label="input">
+<div class="inset todo-bg">
+    <div class="input-group col-xs-4" >
+        <input type="text" ng-model="todoName" placeholder="enter todo e.g buy coffee"  class="form-control" aria-label="input">
         <div class="input-group-btn">
           <button type="button" ng-click="createToDo()" class="btn btn-success btn pull-right">Add</button>
         </div>
-      </div>
+    </div>
       <!-- Search form control -->
-      <!-- <div style="margin-top: 10px;" class="input-group">
-        <input type="text" class="form-control" aria-label="input">
+      <div style="margin-top: 10px;" class="input-group col-sm-12">
+        <input type="text" ng-model="searchTerm" placeholder="search for your todo e.g coffee" class="form-control" aria-label="input">
         <div class="input-group-btn">
           <button type="button" class="btn btn-success btn pull-right">Search</button>
         </div>
-      </div> -->
+      </div>
+      <!-- ToDo List -->
       <ul class="list-group" style="margin-top: 10px">
-        <li ng-class="!item.completed ? 'list-group-item' : 'list-group-item strikethrough'" ng-repeat="item in toDoList">
-            {{ item.name}}
-            <span ng-click="completeToDo($index)" ng-class="!item.completed ? 'glyphicon glyphicon-unchecked pull-right' : 'glyphicon glyphicon-check pull-right'"></span>
+        <li ng-repeat="item in toDoList | filter: searchTerm" ng-class="!item.completed ? 'list-group-item' : 'list-group-item strikethrough'">
+            {{ item.name }}
+            <!-- Complete, Delete, & Edit Controls -->
+            <span style="margin-right: 10px;" ng-click="completeToDo($index)" ng-class="!item.completed ? 'glyphicon glyphicon-unchecked pull-left' : 'glyphicon glyphicon-check pull-left'"></span>
+            <span style="margin-right: 10px;" ng-click="deleteToDo($index)" class="glyphicon glyphicon-trash pull-right"></span>
+            <span style="margin-right: 10px;" ng-click="editToDo($index)" class="glyphicon glyphicon-edit pull-right"></span>
+            
         </li>
         
       </ul>
-      <md-button class="md-fab md-fab-bottom-right" aria-label="Add a category">
-        <md-icon>add</md-icon>
-      </md-button>
-    
+      <!-- If user has no todo's let them know -->
+      <div ng-show="toDoList && toDoList.length === 0"   class="alert alert-info" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        You do not have any todo's. Enter your todo & click the add button to create a todo today!
+      </div>
 </div>

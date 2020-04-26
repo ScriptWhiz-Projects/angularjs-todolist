@@ -1,10 +1,10 @@
-var toDoListApp = angular.module("toDoListApp", ["ngRoute", "ngAnimate"])
+var toDoListApp = angular.module("toDoListApp", ["ngRoute", "ngAnimate", "mgcrea.ngStrap"])
 .config( function($routeProvider, $httpProvider, $locationProvider ){
     console.log("preparing to initialize app...");
     //AppRoutes sets up the app routes before app is initialized
     $locationProvider.hashPrefix("");
     AppRoutes($routeProvider);
-    $routeProvider.otherwise("/splash"), { templateUrl: "views/spash.html", controller: "SplashCtrl" };
+    $routeProvider.otherwise("/login"), { templateUrl: "views/login.html" };
 
     //Reset Http Headers
     //TODO: Fix this
