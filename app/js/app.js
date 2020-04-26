@@ -1,4 +1,4 @@
-var todoListApp = angular.module("ToDoListApp", ["ngRoute", "ngAnimate"])
+var toDoListApp = angular.module("toDoListApp", ["ngRoute", "ngAnimate"])
 .config( function($routeProvider, $httpProvider, $locationProvider ){
     console.log("preparing to initialize app...");
     //AppRoutes sets up the app routes before app is initialized
@@ -19,5 +19,5 @@ var todoListApp = angular.module("ToDoListApp", ["ngRoute", "ngAnimate"])
 })
 .run(function($location){
     console.log("todo list app initialized!");
-    $location.path("/login");
+    // $location.path("/login");
 });

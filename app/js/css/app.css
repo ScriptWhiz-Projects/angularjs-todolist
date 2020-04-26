@@ -1,0 +1,59 @@
+.inset {
+    box-sizing: border-box;
+    margin: 15px; 
+}
+body { 
+    padding-top: 51px; 
+    background: #333333;
+}
+.login-bg {
+    background: url("../assets/img/login.jpg") no-repeat center center fixed;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-y: auto !important
+}
+.strikethrough {
+    text-decoration: line-through;
+}
+.login-panel
+{
+    background: rgba(0, 0, 0, 0.75);
+    color: #eee;
+    margin: 0 auto;
+    border-radius: 3px;
+    padding-bottom: 10px;
+    width: 400px;
+    
+}
+.login-title
+{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    color: white;
+    margin-right: 0px;
+    padding: 15px;
+}
+@media only screen and (max-width: 400px) {
+
+    .login-panel{
+        /*text-align: center;*/
+        background: rgba(0, 0, 0, 0.75);
+        color: #eee;
+        margin: 0 auto;
+        width: 330px;
+        border-radius: 3px;
+        padding-bottom: 10px;
+    }
+}
+
+.login-panel {
+    padding: 5px 8px;
+}
+
+
+
+

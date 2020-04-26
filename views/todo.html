@@ -1,3 +1,26 @@
-<section>
-    <h1>TODO</h1>
-</section>
+<div class="inset">
+    <div class="input-group">
+        <input type="text" ng-model="todoName"  class="form-control" aria-label="input">
+        <div class="input-group-btn">
+          <button type="button" ng-click="createToDo()" class="btn btn-success btn pull-right">Add</button>
+        </div>
+      </div>
+      <!-- Search form control -->
+      <!-- <div style="margin-top: 10px;" class="input-group">
+        <input type="text" class="form-control" aria-label="input">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-success btn pull-right">Search</button>
+        </div>
+      </div> -->
+      <ul class="list-group" style="margin-top: 10px">
+        <li ng-class="!item.completed ? 'list-group-item' : 'list-group-item strikethrough'" ng-repeat="item in toDoList">
+            {{ item.name}}
+            <span ng-click="completeToDo($index)" ng-class="!item.completed ? 'glyphicon glyphicon-unchecked pull-right' : 'glyphicon glyphicon-check pull-right'"></span>
+        </li>
+        
+      </ul>
+      <md-button class="md-fab md-fab-bottom-right" aria-label="Add a category">
+        <md-icon>add</md-icon>
+      </md-button>
+    
+</div>
