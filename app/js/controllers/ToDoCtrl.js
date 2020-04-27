@@ -1,4 +1,4 @@
-toDoListApp.controller("ToDoCtrl", function($scope, $http, $modal, $alert){
+toDoListApp.controller("ToDoCtrl", function($scope, $http, $modal){
     $scope.toDoList = [
         {name: "Change the bulbs", completed: false, deleted: false},
         {name: "Read twice a day", completed: false, deleted: false},
@@ -21,7 +21,7 @@ toDoListApp.controller("ToDoCtrl", function($scope, $http, $modal, $alert){
     $scope.editToDo = function(idx){
         if(idx !== undefined) {
             $scope.currentToDo = $scope.toDoList[idx];
-            $scope.MessageModal = $modal({scope: $scope, template: "views/modals/EditToDoModal.html", show: true});
+            $scope.MessageModal = $modal({scope: $scope, template: "views/modals/EditToDoModal.html", show: true, animation: "am-fade-and-slide-top"});
         } else {
             var editedToDoIdx = $scope.toDoList.findIndex(function(todo){
                 return todo.name === $scope.currentToDo.name
@@ -38,25 +38,20 @@ toDoListApp.controller("ToDoCtrl", function($scope, $http, $modal, $alert){
             $scope.currentIdx = null;
         } else {
             $scope.currentIdx = idx;
-            $scope.MessageModal = $modal({scope: $scope, template: "views/modals/DeleteConfirmationModal.html", show: true});
+            $scope.MessageModal = $modal({scope: $scope, template: "views/modals/DeleteConfirmationModal.html", show: true, animation: "am-fade-and-slide-top"});
         }
     };
 
     $scope.completeToDo = function(idx){
         $scope.toDoList[idx].completed = !$scope.toDoList[idx].completed;
     }
-    
+    //TODO: Link method to fetch todo for a user once backend api is complete
     function fetchToDos(){
-        $http.get("someurl").success(function(){
+        var url = "";
+        $http.get(url).success(function(){
 
         }).error(function(err, status) {
 
         });
     }
-
-    // Constructor determines what to do
-    function constructor(){
-        $scope.newToDo = {name: "", completed: false, deleted: false};
-    }
-    constructor();
 });

@@ -13,7 +13,7 @@
         </div>
       </div>
       <!-- ToDo List -->
-      <ul class="list-group" style="margin-top: 10px">
+      <ul class="list-group" id="todolistgroup" style="margin-top: 10px">
         <li ng-repeat="item in toDoList | filter: searchTerm" ng-class="!item.completed ? 'list-group-item' : 'list-group-item strikethrough'">
             {{ item.name }}
             <!-- Complete, Delete, & Edit Controls -->

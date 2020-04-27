@@ -21,3 +21,6 @@ var toDoListApp = angular.module("toDoListApp", ["ngRoute", "ngAnimate", "mgcrea
     console.log("todo list app initialized!");
     // $location.path("/login");
 });
+
+//TODO: Add interceptors to include basic auth credentials with every http request
+//TODO: Test CORS on localhost, & after app deployed

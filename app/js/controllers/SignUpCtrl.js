@@ -6,12 +6,12 @@ toDoListApp.controller("SignUpCtrl", function($scope, $location, $http){
     $scope.handleRegister = function(){
         $location.path("/splash");
         return;
-        //TODO: Add proper functionality once backend is done
+        //TODO: Configure backend & use below code to register new user
         var url = "";
        $http.post(url, $scope.user).then(function(resp){
 
        }).catch(function(error, status){
-        alert("Error!")
+        //TODO: Handle error better
        })
     };
 
