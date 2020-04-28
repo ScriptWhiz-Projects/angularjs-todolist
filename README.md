@@ -1,6 +1,7 @@
 # AngularJS ToDo List App
 
-This is an AngularJA todo list app that works together with a laravel backend API [laravel todoApi](https://github.com/ScriptWhiz-Projects/todo-api)
+This is an AngularJS todo list app that works together with a laravel backend API [laravel todoApi](https://github.com/ScriptWhiz-Projects/todo-api)
+![Image of hacker](https://scriptwhizimages.s3.amazonaws.com/todolistapp.gif)
 
 ## Get started
 
